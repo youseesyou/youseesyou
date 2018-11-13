@@ -1,43 +1,18 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>tixt</title>
-    </head>
-    <body>
-        <div class="div" id="d1" onclick="name()"><h1 id="h1" onclick="name(this)">hello world!</h1></div>
-        <script>
-        var sj=document.getElementById("d1");
-        d1.onclick=name();
-        function name() {
-        var tit=document.getElementById("h1");
-        tit.innerHTML="好久不见...";
-        }   
-        </script>
-        <h1 id="s1">!!!</h1>
-        <button type="button" onclick="document.getElementById('s1').innerHTML='试验成功！'">按钮</button>
-        <a href="http://www.baidu.com">百度一下</a>
-    </body>
-    <style>
-    #t1{
-        background-image: url(image.jpg);
-        background-repeat: no-repeat;
-        background-color: black;
-    }
-    .div{
-        width: 600px;
-        height: 400px;
-        background-color: aquamarine;
-        padding: 5px;
-        margin: 1px 1px 1px 1px;
-        text-align: center;
-    }
-    </style>
-    <script>
-    function name(id) {
-        // id.style.background-color ='black';
-        var tit=document.getElementById("h1");
-        tit.innerHTML="好久不见...";
-        d1.onclick="tit.innerHTML='很是想念...'";     
-    }
-    </script>
-</html>
+---
+layout: default
+title: your awesome title
+page-title: your awesome page-title.
+home-title: your awesome home-title.
+description: description
+---
+
+{% include header.html %}
+{% include boot.html %}
+<main>
+    {% include title.html %}
+    <ul class="post-list">
+      {% include posts_paginator.html %}
+    </ul>
+</main>
+{% include pageNav.html %}
+{% include footer.html %}
